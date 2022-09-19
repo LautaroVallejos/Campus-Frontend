@@ -1,30 +1,42 @@
 import { fetcher } from '../lib/api'
+import Estudiantes from '../components/Fetch'
+const url = 'https://campus-backend-jh.herokuapp.com/api' 
 
-const Fetch = ({ estudiante }) => {
+const Fetch = ({estudiantes}) => {
     return(
         <div className="container">
-            <h1>Testeando pagina</h1>
-            <h2>Estudiante</h2>
-            <div>
-                <h3>Nombre: {estudiante.data.attributes.nombre}</h3>
-                <h3>Apellido: {estudiante.data.attributes.apellido}</h3>
-                <h3>Edad: {estudiante.data.attributes.edad}</h3> 
-                <h3>Email: {estudiante.data.attributes.email}</h3> 
-                <h3>Contacto del Tutor: {estudiante.data.attributes.contactoTutor}</h3> 
-                <h3>Nro Obra Social: {estudiante.data.attributes.nroObraSocial}</h3> 
-                <h3>DNI: {estudiante.data.attributes.dni}</h3>  
-            </div>
+            <span>
+            {estudiantes &&
+                estudiantes.data.map((estudiante) => {
+                    return(
+                        <li key={estudiante.id}>
+                            <a href={`estudiante/` + estudiante.id}>
+                                <h2>Estudiante</h2>
+                                <div>
+                                    <h3>Nombre: {estudiante.attributes.nombre}</h3>
+                                    <h3>Apellido: {estudiante.attributes.apellido}</h3>
+                                    <h3>Edad: {estudiante.attributes.edad}</h3> 
+                                    <h3>Email: {estudiante.attributes.email}</h3> 
+                                    <h3>Contacto del Tutor: {estudiante.attributes.contactoTutor}</h3> 
+                                    <h3>Nro Obra Social: {estudiante.attributes.nroObraSocial}</h3> 
+                                    <h3>DNI: {estudiante.attributes.dni}</h3>  
+                                </div>
+                            </a>
+                        </li>
+                    );
+                })}
+            </span>
         </div>
     )
 }
 export default Fetch;
 
 export async function getStaticProps(){
-    const { data, meta } = await fetcher(`https://campus-backend-jh.herokuapp.com/api/estudiantes/1`);
-    console.log({data, meta})
+    const estudiantes = await fetcher(`https://campus-backend-jh.herokuapp.com/api/estudiantes`);
+    console.log(estudiantes)
     return {
         props: {
-            estudiante: {data, meta}
+            estudiantes: estudiantes
         }
     }
 }
