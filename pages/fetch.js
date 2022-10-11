@@ -1,6 +1,6 @@
 import { fetcher } from '../lib/api'
-import Estudiantes from '../components/Fetch'
-const url = 'https://campus-backend-jh.herokuapp.com/api' 
+import Estudiantes from '../components/Fetch' 
+import Tabla from '../components/Table'
 
 const Fetch = ({estudiantes}) => {
     return(
@@ -18,7 +18,8 @@ const Fetch = ({estudiantes}) => {
                                     <h3>Edad: {estudiante.attributes.edad}</h3> 
                                     <h3>Email: {estudiante.attributes.email}</h3> 
                                     <h3>Contacto del Tutor: {estudiante.attributes.contactoTutor}</h3> 
-                                    <h3>Nro Obra Social: {estudiante.attributes.nroObraSocial}</h3> 
+                                    <h3>Obra Social: {estudiante.attributes.obraSocial}</h3>
+                                    <h3>Nro Obra Social: {estudiante.attributes.numObraSocial}</h3> 
                                     <h3>DNI: {estudiante.attributes.dni}</h3>  
                                 </div>
                             </a>
@@ -26,17 +27,19 @@ const Fetch = ({estudiantes}) => {
                     );
                 })}
             </span>
+
+            <Tabla/>
         </div>
     )
 }
 export default Fetch;
 
 export async function getStaticProps(){
-    const estudiantes = await fetcher(`https://campus-backend-jh.herokuapp.com/api/estudiantes`);
+    const estudiantes = await fetcher('http://localhost:1337/api/estudiantes');
     console.log(estudiantes)
     return {
         props: {
             estudiantes: estudiantes
         }
     }
-}
+};
