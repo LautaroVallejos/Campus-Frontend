@@ -27,7 +27,7 @@ function Tabla({ estudiantes }) {
     };
   }
 
-  const list = useAsyncList({ load });
+  const list = useAsyncList(load);
   return (
     <Table
       bordered
@@ -45,7 +45,7 @@ function Tabla({ estudiantes }) {
         items={list.items}
         loadingState={list.loadingState}
         onLoadMore={list.loadMore}
-    >
+      >
         {estudiantes &&
                     estudiantes.data.map((estudiante) => {
                         return(
@@ -70,14 +70,30 @@ function Tabla({ estudiantes }) {
   );
 }
 
-// export async function getStaticProps(){
-//     const estudiantes = await fetcher(`http://localhost:1337/api/estudiantes`);
-//     console.log(estudiantes)
-//     return {
-//         props: {
-//             estudiantes: estudiantes
-//         }
-//     }
-// };
+{/* <Table
+      bordered
+      shadow={false}
+      aria-label="Example table with dynamic content & infinity pagination"
+      css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
+      color="secondary"
+    >
+      <Table.Header columns={columns}>
+        {(column) => (
+          <Table.Column key={column.uid}>{column.name}</Table.Column>
+        )}
+      </Table.Header>
+      <Table.Body
+        items={list.items}
+        loadingState={list.loadingState}
+        onLoadMore={list.loadMore}
+      >
+        {(item) => (
+          <Table.Row key={item.name}>
+            {(key) => <Table.Cell>{item[key]}</Table.Cell>}
+          </Table.Row>
+        )}
+      </Table.Body>
+    </Table>
+  ); */}
 
 export default Tabla;
