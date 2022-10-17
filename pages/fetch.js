@@ -20,7 +20,7 @@ const Fetch = ({estudiantes}) => {
                                     <h3>Contacto del Tutor: {estudiante.attributes.contactoTutor}</h3> 
                                     <h3>Obra Social: {estudiante.attributes.obraSocial}</h3>
                                     <h3>Nro Obra Social: {estudiante.attributes.numObraSocial}</h3> 
-                                    <h3>DNI: {estudiante.attributes.dni}</h3>  
+                                    <h3>DNI: {estudiante.attributes.DNI}</h3>  
                                 </div>
                             </a>
                         </li>
