@@ -86,7 +86,7 @@ export default Tabla;
 
 export async function getServerSideProps(){
     const res = await fetch(`http://localhost:1337/api/estudiantes?populate=*`);
-    estudiantes = res.json()
+    const estudiantes = await res.json()
     console.log(estudiantes)
     return {
         props: {
