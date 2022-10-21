@@ -2,7 +2,7 @@
 import { Table, useAsyncList } from "@nextui-org/react";
 
 // Se realiza la peticion al backend
-const url = 'http://localhost:1337/api/estudiantes?populate=*'
+let url = 'http://localhost:1337/api/estudiantes?populate=*'
 
 // Vista/Página de la Tabla
 const Tabla = ({ estudiantes }) => {
@@ -97,7 +97,24 @@ const Tabla = ({ estudiantes }) => {
 // Función que realíza la petición y trae los datos del backend
 export async function getServerSideProps(){
     const res = await fetch(url);
-    const estudiantes = await res.json()
+    let estudiantes = await res.json()
+    let send = true
+    let field = 'nombre'
+    let value = '7'
+
+    if(send === true){
+        url = `http://localhost:1337/api/estudiantes?populate=*&filters[${field}][$contains]=${value}`
+        
+        const resfilter = await fetch(url)
+        estudiantes = await resfilter.json()
+
+        return {
+            props: {
+                estudiantes: estudiantes,
+            }
+        }    
+
+    }
 
     return {
         props: {
