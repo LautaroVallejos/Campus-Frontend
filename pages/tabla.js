@@ -1,10 +1,9 @@
 import { Table, useAsyncList } from "@nextui-org/react";
-import fetcher from '../lib/api'
-
-function Tabla({ estudiantes }) {
+import { fetcher } from '../lib/api'
+function Tabla({ estudiantes, curso }) {
   const columns = [
-    { name: "Nombre", uid: "nombre" },
-    { name: "Apellido", uid: "apellido" },
+    { name: "Nombre Completo", uid: "nombre" },
+    { name: "Curso", uid: "curso"},
     { name: "Edad", uid: "edad" },
     { name: "Email", uid: "email" },
     { name: "Contacto Tutor", uid: "contactoTutor" },
@@ -27,10 +26,9 @@ function Tabla({ estudiantes }) {
     };
   }
 
-  const list = useAsyncList(load);
+  const list = useAsyncList({ estudiantes, curso });
   return (
     <Table
-      bordered
       shadow={false}
       aria-label="Example table with dynamic content & infinity pagination"
       css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
@@ -45,55 +43,55 @@ function Tabla({ estudiantes }) {
         items={list.items}
         loadingState={list.loadingState}
         onLoadMore={list.loadMore}
-      >
+    >
         {estudiantes &&
-                    estudiantes.data.map((estudiante) => {
-                        return(
-                            <li key={estudiante.id}>
-                                <a href={`estudiante/` + estudiante.id}>
-                                    <h2>Estudiante</h2>
-                                    <div>
-                                        <h3>Nombre: {estudiante.attributes.nombre}</h3>
-                                        <h3>Apellido: {estudiante.attributes.apellido}</h3>
-                                        <h3>Edad: {estudiante.attributes.edad}</h3> 
-                                        <h3>Email: {estudiante.attributes.email}</h3> 
-                                        <h3>Contacto del Tutor: {estudiante.attributes.contactoTutor}</h3> 
-                                        <h3>Nro Obra Social: {estudiante.attributes.nroObraSocial}</h3> 
-                                        <h3>DNI: {estudiante.attributes.dni}</h3>  
-                                    </div>
-                                </a>
-                            </li>
-                        );
-                    })}
+          estudiantes.data.map(estudiante => {
+            const curso = estudiante.attributes.curso.data.attributes.nombreCurso
+            console.log(curso)
+
+            return(
+              <Table.Row key={estudiante.id}>
+                  <Table.Cell>
+                    {estudiante.attributes.nombre + ' ' + estudiante.attributes.apellido}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {curso}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {estudiante.attributes.edad}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {estudiante.attributes.email}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {estudiante.attributes.contactoTutor}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {estudiante.attributes.obraSocial}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {estudiante.attributes.numObraSocial}
+                  </Table.Cell>
+                  <Table.Cell>
+                    {estudiante.attributes.DNI}
+                  </Table.Cell>
+              </Table.Row>
+            )
+          })};
       </Table.Body>
     </Table>
   );
 }
-
-{/* <Table
-      bordered
-      shadow={false}
-      aria-label="Example table with dynamic content & infinity pagination"
-      css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
-      color="secondary"
-    >
-      <Table.Header columns={columns}>
-        {(column) => (
-          <Table.Column key={column.uid}>{column.name}</Table.Column>
-        )}
-      </Table.Header>
-      <Table.Body
-        items={list.items}
-        loadingState={list.loadingState}
-        onLoadMore={list.loadMore}
-      >
-        {(item) => (
-          <Table.Row key={item.name}>
-            {(key) => <Table.Cell>{item[key]}</Table.Cell>}
-          </Table.Row>
-        )}
-      </Table.Body>
-    </Table>
-  ); */}
-
 export default Tabla;
+
+export async function getServerSideProps(){
+    const res = await fetch(`http://localhost:1337/api/estudiantes?populate=*`);
+    const estudiantes = await res.json()
+    console.log(estudiantes)
+    return {
+        props: {
+            estudiantes: estudiantes,
+            // curso: estudiantes.data.attributes.curso.data.attributes.nombreCurso
+        }
+    }
+};
