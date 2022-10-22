@@ -1,4 +1,12 @@
 .cont-footer{
-background-color: aqua;
-height: 3000px;
+    background-color: aqua;
+    position: fixed;
+    background: rgb(55, 55, 61);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    top: 0;
+    width: 50%;
+    border-radius: 30px;
 }

@@ -4,9 +4,12 @@ const Footer = () => {
 return(
 
 <div>
-<div  className="cont-footer">holas</div>
+    <footer className="cont-footer">
+<div  >holas</div>
 
-
+</footer>
 </div>
 
 )};
+
+export default Footer;

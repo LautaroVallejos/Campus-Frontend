@@ -4,6 +4,7 @@ import Image from "next/image";
    const Navbar = () => {
       return (
           // {/* contenedor del navbar */}
+          <div>
         <div className="cont-navbar">
           <div className="title">
             <Image
@@ -82,6 +83,8 @@ import Image from "next/image";
 
           </div>
         </ul>
+        </div>
+      
         </div>
   )};
 

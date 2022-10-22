@@ -4,8 +4,9 @@
 }
 .cont-navbar{
     background-color: black;
-    
+    display: block;
     position: fixed;
+    float: left;
     top: 0;
     bottom: 0;
     padding: 0;
@@ -64,4 +65,5 @@ ul{
 .option{
     margin-left: 10px;
 }
+
 
