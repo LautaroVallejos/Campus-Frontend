@@ -1,13 +1,13 @@
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 
-// var check = document.getElementById("Menu")
 function MenuF() {
-  if (document.getElementById("Menu").checked) {
+  var check = document.getElementById("Menu").checked
+  if (check) {
     const menu=document.getElementById("cont-slider").style.display="block";
   }
   else{
-    const menu1=document.getElementById("cont-slider").style.display="hidden";
+    const menu=document.getElementById("cont-slider").style.display="none";
   }
 }
 
@@ -97,7 +97,7 @@ function MenuF() {
         </div>
 
         <div className="menu-responsive">
-          <input type={"checkbox"} id="Menu" Click={MenuF} ></input>
+          <input type={"checkbox"} id="Menu" onClick={MenuF} ></input>
           <label for="Menu">
           <Image
           className="Icon-menu"
