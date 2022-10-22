@@ -1,6 +1,6 @@
 .cont-footer{
     background-color: aqua;
-    position: fixed;
+    position: relative;
     background: rgb(55, 55, 61);
     display: flex;
     flex-wrap: wrap;
