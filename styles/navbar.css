@@ -4,12 +4,14 @@
 }
 .cont-navbar{
     background-color: black;
-    
+    display: block;
     position: fixed;
+    width: 280px;
+    max-width: 27rem !important;
+    float: left;
     top: 0;
     bottom: 0;
     padding: 0;
-    max-width: 17rem !important;
     height: 97%; 
     margin-left: 10px;
     margin-right: 5px;
@@ -17,6 +19,11 @@
     border-radius: 30px;
     
 }
+
+.menu-responsive{
+    display: none;
+}
+
 
 .title{
     /* background-color: pink; */
@@ -27,6 +34,7 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
+
 
 .title-name{
     /* background-color: brown; */
@@ -44,8 +52,9 @@ hr.linea {
     }
 
 
-ul{
+ul .option{
     color: white;  
+    
 }
 
 
@@ -58,10 +67,114 @@ ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 35px;
 }
 
 .option{
     margin-left: 10px;
 }
+
+@media (max-width: 1320px) {
+    .cont-navbar{
+        /* background-color: aquamarine; */
+        display: none;
+    }
+
+    .menu-responsive{
+        /* background-color: blue; */
+        display: block;
+        position: fixed;
+        margin-top: 10px;
+        margin-left: 10px;
+    }
+
+    #btn-menu{
+		display: none;
+	}
+    .btn-Menu {
+        /* background-color: violet; */
+        margin-left: 30px;
+        margin-top: 20px;
+        
+    }
+    .menu{
+        /* background-color: red; */
+        
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .title{
+        /* background-color: red; */
+        margin-top: 40px;
+        margin-bottom: 2px;
+    }
+
+	.container-menu{
+		position: absolute;
+		width: 100%;
+		height: 100vh;
+		top: 0;left: 0;
+		transition: all 500ms ease;
+		opacity: 0;
+		visibility: hidden;
+	}
+	#btn-menu:checked ~ .container-menu{
+		opacity: 1;
+		visibility: visible;
+	}
+	.cont-menu{
+		position: relative;
+		transition: all 500ms ease;
+		transform: translateX(-100%);
+        background-color: black;
+        display: block;
+        position: fixed;
+        width: 280px;
+        max-width: 27rem !important;
+        float: left;
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        height: 97%; 
+        /* margin-left: 10px; */
+        margin-right: 5px;
+        margin-top:0.9%;
+        border-radius: 30px;
+	}
+	#btn-menu:checked ~ .container-menu .cont-menu{
+		transform: translateX(0%);
+	}
+	.cont-menu nav{
+		transform: translateY(15%);
+	}
+	.cont-menu nav a{
+		display: block;
+		text-decoration: none;
+		padding: 20px;
+		color: #c7c7c7;
+		border-left: 5px solid transparent;
+		transition: all 400ms ease;
+	}
+	.cont-menu nav a:hover{
+		border-left: 5px solid #c7c7c7;
+		background: #1f1f1f;
+	}
+	.cont-menu label{
+		position: absolute;
+		right: 5px;
+		top: 10px;
+		color: #fff;
+		cursor: pointer;
+		font-size: 18px;
+	}
+}
+
+
+
+
 
