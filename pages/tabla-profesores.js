@@ -1,8 +1,10 @@
 // Recursss
-import { Table, useAsyncList } from "@nextui-org/react";
+import { Table, useAsyncList, css } from "@nextui-org/react";
+import Head from 'next/head';
+import styles from "../styles/tabla.module.css"
 
 // Se realiza la peticion al backend
-const url = 'http://localhost:1337/api/profesores?populate=*'
+let url = 'http://localhost:1337/api/profesores?populate=*'
 
 // Vista/Página de la Tabla
 const Tabla = ({ profesores }) => {
@@ -33,43 +35,63 @@ const Tabla = ({ profesores }) => {
 
     // Tabla de Cursos
     return (
-        <Table
-            shadow={false}
-            aria-label="Example table with dynamic content & infinity pagination"
-            css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
-            color="secondary"
-        >
-            <Table.Header columns={columns}>
-                {(column) => (
-                    <Table.Column key={column.uid}>{column.name}</Table.Column>
-                )}
-            </Table.Header>
-
-            <Table.Body 
-                items={list.items}
-                loadingState={list.loadingState}
-                onLoadMore={list.loadMore}
+        <>
+            <h1 className={styles.title}>Tabla de Profesores</h1>
+            <Table
+                shadow={false}
+                aria-label="Example table with dynamic content & infinity pagination"
+                css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
+                color="secondary"
             >
-                {   
-                profesores &&
-                    profesores.data.map(profesor => {
+                <Table.Header columns={columns}>
+                    {(column) => (
+                        <Table.Column key={column.uid}>{column.name}</Table.Column>
+                    )}
+                </Table.Header>
 
-                        return(
-                            <Table.Row key={profesor.id}>
-                                <Table.Cell>
-                                    {profesor.attributes.nombre + " " + profesor.attributes.apellido}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {profesor.attributes.materia}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {profesor.attributes.email}
-                                </Table.Cell>
-                            </Table.Row>
-                        )
-                })};
-            </Table.Body>
-        </Table>
+                <Table.Body 
+                    items={list.items}
+                    loadingState={list.loadingState}
+                    onLoadMore={list.loadMore}
+                >
+                    {   
+                    profesores &&
+                        profesores.data.map(profesor => {
+
+                            return(
+                                <Table.Row 
+                                    key={profesor.id}
+                                    css={{
+                                        borderBottom: "1px solid #101010"
+                                    }}
+                                >
+                                    <Table.Cell
+                                        css={{
+                                            color: "#FFF7E9"
+                                        }}
+                                    >
+                                        {profesor.attributes.nombre + " " + profesor.attributes.apellido}
+                                    </Table.Cell>
+                                    <Table.Cell
+                                        css={{
+                                            color: "#FFF7E9"
+                                        }}
+                                    >
+                                        {profesor.attributes.materia}
+                                    </Table.Cell>
+                                    <Table.Cell
+                                        css={{
+                                            color: "#FFF7E9"
+                                        }}
+                                    >
+                                        {profesor.attributes.email}
+                                    </Table.Cell>
+                                </Table.Row>
+                            )
+                    })};
+                </Table.Body>
+            </Table>
+        </>
     );
 }
 
