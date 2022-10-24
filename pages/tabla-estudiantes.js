@@ -1,8 +1,10 @@
 // Recursos
 import { Table, useAsyncList } from "@nextui-org/react";
+import Head from 'next/head';
+import styles from "../styles/tabla.module.css"
 
 // Se realiza la peticion al backend
-const url = 'http://localhost:1337/api/estudiantes?populate=*'
+let url = 'http://localhost:1337/api/estudiantes?populate=*'
 
 // Vista/Página de la Tabla
 const Tabla = ({ estudiantes }) => {
@@ -38,59 +40,67 @@ const Tabla = ({ estudiantes }) => {
 
     // Tabla de Estudiantes
     return (
-        <Table
-            shadow={false}
-            aria-label="Example table with dynamic content & infinity pagination"
-            css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
-            color="secondary"
-        >
-            <Table.Header columns={columns}>
-                {(column) => (
-                    <Table.Column key={column.uid}>{column.name}</Table.Column>
-                )}
-            </Table.Header>
-
-            <Table.Body 
-                items={list.items}
-                loadingState={list.loadingState}
-                onLoadMore={list.loadMore}
+        <>
+            <h1 className={styles.title}>Tabla de Estudiantes</h1>
+            <Table
+                shadow={false}
+                aria-label="Example table with dynamic content & infinity pagination"
+                css={{ minWidth: "100%", height: "calc($space$14 * 10)" }}
+                color="secondary"
             >
-                {   
-                estudiantes &&
-                    estudiantes.data.map(estudiante => {
-                        const curso = estudiante.attributes.curso.data.attributes.nombreCurso
+                <Table.Header columns={columns}>
+                    {(column) => (
+                        <Table.Column key={column.uid}>{column.name}</Table.Column>
+                    )}
+                </Table.Header>
 
-                        return(
-                            <Table.Row key={estudiante.id}>
-                                <Table.Cell>
-                                    {estudiante.attributes.nombre + ' ' + estudiante.attributes.apellido}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {curso}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {estudiante.attributes.email}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {estudiante.attributes.grupoTaller}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {estudiante.attributes.DNI}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {estudiante.attributes.contactoTutor}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {estudiante.attributes.edad}
-                                </Table.Cell>
-                                <Table.Cell>
-                                    {estudiante.attributes.obraSocial + " N° " + estudiante.attributes.numObraSocial}
-                                </Table.Cell>
-                            </Table.Row>
-                        )
-                })};
-            </Table.Body>
-        </Table>
+                <Table.Body 
+                    items={list.items}
+                    loadingState={list.loadingState}
+                    onLoadMore={list.loadMore}
+                >
+                    {   
+                    estudiantes &&
+                        estudiantes.data.map(estudiante => {
+                            const curso = estudiante.attributes.curso.data.attributes.nombreCurso
+
+                            return(
+                                <Table.Row 
+                                    key={estudiante.id}
+                                    css={{
+                                        borderBottom: "1px solid #101010"
+                                    }}
+                                >
+                                    <Table.Cell css={{ color: "#FFF7E9"}}>
+                                        {estudiante.attributes.nombre + ' ' + estudiante.attributes.apellido}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {curso}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {estudiante.attributes.email}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {estudiante.attributes.grupoTaller}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {estudiante.attributes.DNI}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {estudiante.attributes.contactoTutor}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {estudiante.attributes.edad}
+                                    </Table.Cell>
+                                    <Table.Cell css={{ color: "#FFF7E9" }}>
+                                        {estudiante.attributes.obraSocial + " N° " + estudiante.attributes.numObraSocial}
+                                    </Table.Cell>
+                                </Table.Row>
+                            )
+                    })};
+                </Table.Body>
+            </Table>
+        </>
     );
 }
 

@@ -1,0 +1,18 @@
+@font-face {
+    font-family: Lato;
+    src: url(./fonts/Lato-Regular.ttf) format('ttf');
+}
+
+.title{
+    font-size: 2.3em;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    color: #FFF7E9;
+    text-shadow: 2px 2px 5px #909090;
+    margin-bottom: .5em;
+}
+
+.table{
+    color: #B2B2B2;
+}

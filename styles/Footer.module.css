@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.data {
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.items{ 
+    margin: 1em
+}

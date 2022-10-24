@@ -20,8 +20,9 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
-    color: white;
-    background: #505050;
+    color: #B2B2B2;
+    background: #16213E;
   }
 }
