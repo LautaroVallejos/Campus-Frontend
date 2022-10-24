@@ -6,7 +6,7 @@ import "react-slideshow-image/dist/styles.css";
 const Slideshow = () => {
 	//Array of Images
 	const images = [
-		"img/image1.jpg",
+		"img/Image1.jpg",
 		"img/Image2.jpg",
 		"img/Image3.jpg",
 		"img/Image4.jpg",
@@ -21,7 +21,7 @@ const Slideshow = () => {
 		transitionDuration: 500,
 		infinite: true,
 		prevArrow: (
-			<div style={{ width: "30px", marginRight: "-30px", cursor: "pointer" }}>
+			<div style={{ width: "30px", marginLeft: "289px", cursor: "pointer" }}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -32,7 +32,7 @@ const Slideshow = () => {
 			</div>
 		),
 		nextArrow: (
-			<div style={{ width: "30px", marginLeft: "-30px", cursor: "pointer" }}>
+			<div style={{ width: "30px", marginRight: "289px", cursor: "pointer" }}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 512 512"
@@ -44,18 +44,22 @@ const Slideshow = () => {
 		),
 	};
 	return (
-	
-
-			<Zoom {...zoomInProperties}>
+			<center>
+				<Zoom  {...zoomInProperties}>
 				{images.map((each, index) => (
-					<div key={index} className="flex justify-center w-full h-full">
+					<div style={{width: "50%", display: "flex", justifyContent: "center", alignContent: "center"}} key={index}>
 						<img
+							style={{display: "flex", justifyContent: "center"}}
 							className="w-3/4 object-cover rounded-lg shadow-xl"
+							// width={50}
+							// height={50}
 							src={each}
 						/>
 					</div>
 				))}
 			</Zoom>
+			</center>
+			
 		
 	);
 };

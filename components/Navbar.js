@@ -1,10 +1,13 @@
 import { Divider } from "@nextui-org/react";
 import Image from "next/image";
 
+import React from "react";
+//These are Third party packages for smooth slideshow
+import { Zoom } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
-
-   const Navbar = () => {
-      return (
+const Navbar = () => {
+    return (
           // {/* contenedor del navbar */}
       <div>
         <div id="cont-slider" className="cont-navbar">
@@ -181,8 +184,6 @@ import Image from "next/image";
               </div>
             </div>
         </div>
-
-      
       </div>
   )};
 
