@@ -44,10 +44,7 @@ const Slideshow = () => {
 		),
 	};
 	return (
-		<div className="m-10">
-			<h1 className="text-center text-6xl  font-bold pb-10 ">
-				Responsive Next.js <span className="text-indigo-600">Image Slider</span>
-			</h1>
+	
 
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
@@ -59,7 +56,7 @@ const Slideshow = () => {
 					</div>
 				))}
 			</Zoom>
-		</div>
+		
 	);
 };
 
