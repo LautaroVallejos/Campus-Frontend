@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.css'
 import herosection from '../components/herosection'
 import Navbar from '../components/Navbar'
 import Slideshow from '../components/Slideshow'
+import NavbarX from '../components/NavbarX'
 
 
 const Home = () => {
@@ -16,9 +17,9 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
+      <NavbarX />
 
-      <Slideshow/>
+      {/* <Slideshow/> */}
       
 
     </div>

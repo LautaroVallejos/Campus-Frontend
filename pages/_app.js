@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     <NextUIProvider>
       {/* <Navbar></Navbar> */}
       <Component {...pageProps} />
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </NextUIProvider>
   );
 }
