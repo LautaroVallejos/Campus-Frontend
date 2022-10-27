@@ -1,5 +1,7 @@
-.ave{
-    border: 100px black solid;
-    margin: 3000px;
+.slidescontainer{
     background-color: brown;
+}
+
+.slidescontainer svg{
+    fill: blue;
 }
