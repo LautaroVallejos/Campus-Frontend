@@ -19,7 +19,8 @@ const Home = () => {
 
       <NavbarX />
 
-      {/* <Slideshow/> */}
+      <Slideshow/>
+
       
 
     </div>

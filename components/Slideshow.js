@@ -1,65 +1,56 @@
 import React from "react";
+
 //These are Third party packages for smooth slideshow
 import { Zoom } from "react-slideshow-image";
+import  "../styles/slider.module.css"
 import "react-slideshow-image/dist/styles.css";
 
 const Slideshow = () => {
 	//Array of Images
 	const images = [
-		"img/Image1.jpg",
-		"img/Image2.jpg",
-		"img/Image3.jpg",
-		"img/Image4.jpg",
+		"img/slider1.jpeg",
+		"img/slider2.gif",
+		"img/slider3.gif",
+		"img/slider4.gif",
 		"img/Image5.jpg",
 	];
 
 	//These are custom properties for zoom effect while slide-show
-	const zoomInProperties = {
-		indicators: true,
-		scale: 1.2,
-		duration: 5000,
-		transitionDuration: 500,
-		infinite: true,
-		prevArrow: (
-			<div style={{ width: "30px", marginLeft: "289px", cursor: "pointer" }}>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 512 512"
-					fill="#2e2e2e"
-				>
-					<path d="M242 180.6v-138L0 256l242 213.4V331.2h270V180.6z" />
-				</svg>
-			</div>
-		),
-		nextArrow: (
-			<div style={{ width: "30px", marginRight: "289px", cursor: "pointer" }}>
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 512 512"
-					fill="#2e2e2e"
-				>
-					<path d="M512 256L270 42.6v138.2H0v150.6h270v138z" />
-				</svg>
-			</div>
-		),
+	function flechas()  {
+		indicators: true;
+		scale: 1.2;
+		duration: 2000;
+		transitionDuration: 500;
+		infinite: true;
+	}
+	
+	var slider={
+		marginTop:"30px",
+		marginBottom:"30px",
+		
 	};
+
+
 	return (
+		<div className="ave" style={slider}>
+			
 			<center>
-				<Zoom  {...zoomInProperties}>
+				<Zoom  {...flechas}>
 				{images.map((each, index) => (
-					<div style={{width: "50%", display: "flex", justifyContent: "center", alignContent: "center"}} key={index}>
+					<div style={{width: "77.79%", display: "flex", justifyContent: "center", alignContent: "center"
+					,border:"2px solid #FFFF",boxShadow:"10px 5px 5px  rgba(0,0,0,0.5)"}} key={index}>
 						<img
 							style={{display: "flex", justifyContent: "center"}}
 							className="w-3/4 object-cover rounded-lg shadow-xl"
-							// width={50}
-							// height={50}
+							width={20000}
+							height={600}
 							src={each}
 						/>
 					</div>
 				))}
 			</Zoom>
 			</center>
-			
+		</div>	
 		
 	);
 };
