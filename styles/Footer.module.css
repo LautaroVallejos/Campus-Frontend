@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     background-color: #1F4690;
+    flex-direction: column;
 }
 .hr{
     background-color: black;
@@ -10,27 +11,21 @@
 }
 .data {
     display: flex;
-    /* flex-direction: row; */
-    
+    width: 100%;
+    max-width: var(--nextui--navbarContainerMaxWidth);
+    margin: 2em auto;
 }
 
 .items{ 
-    margin-bottom: 2em;
-    margin-left: 7em;
-    margin-right: 7em;
-    margin-top: 3em;
     text-align: center;
-    color:rgb(198, 199, 199)
+    color:rgb(198, 199, 199);
+    width: 100%;
+    padding: 1em;
 }
-.items2{ 
+.items:nth-child(2){
     border:5px solid red;
-    margin-bottom: 2em;
-    margin-left: 7em;
-    margin-right: 7em;
-    margin-top: 3em;
-    text-align: center;
-    color:rgb(198, 199, 199)
 }
+
 .copy{
     display: flex;
     justify-content: center;
@@ -44,6 +39,6 @@
         flex-direction: column;
         margin-bottom: 0;
     }
-    }
+}
   
   
