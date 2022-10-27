@@ -15,7 +15,16 @@
 }
 
 .items{ 
-    margin-bottom: 4em;
+    margin-bottom: 2em;
+    margin-left: 7em;
+    margin-right: 7em;
+    margin-top: 3em;
+    text-align: center;
+    color:rgb(198, 199, 199)
+}
+.items2{ 
+    border:5px solid red;
+    margin-bottom: 2em;
     margin-left: 7em;
     margin-right: 7em;
     margin-top: 3em;
@@ -23,11 +32,14 @@
     color:rgb(198, 199, 199)
 }
 .copy{
+    display: flex;
+    justify-content: center;
     text-align: center;
+    margin: 2em;
     color:rgb(198, 199, 199)
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .data{
         flex-direction: column;
         margin-bottom: 0;
