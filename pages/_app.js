@@ -4,12 +4,13 @@ import '../styles/footer.css'
 import { NextUIProvider } from '@nextui-org/react';
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import NavbarX from '../components/NavbarX'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 function MyApp({ Component, pageProps }) {
   return (
     <NextUIProvider>
-      {/* <Navbar></Navbar> */}
+      <NavbarX />
       <Component {...pageProps} />
       <Footer></Footer>
     </NextUIProvider>

@@ -17,7 +17,7 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavbarX />
+      {/* <NavbarX /> */}
 
       <Slideshow/>
 
