@@ -16,3 +16,17 @@
 .table{
     color: #B2B2B2;
 }
+
+.filter_container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.input_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
