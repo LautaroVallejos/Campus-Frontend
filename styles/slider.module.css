@@ -1,7 +1,16 @@
 .slidescontainer{
-    background-color: brown;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .slidescontainer svg{
     fill: blue;
+}
+
+
+@media (max-width: 840px){
+
+    .ImgSlider img{
+        height: 200px;
+        }
 }
