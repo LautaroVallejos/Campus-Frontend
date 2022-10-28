@@ -3,7 +3,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import herosection from '../components/herosection'
-import Navbar from '../components/Navbar'
 import Slideshow from '../components/Slideshow'
 import NavbarX from '../components/NavbarX'
 

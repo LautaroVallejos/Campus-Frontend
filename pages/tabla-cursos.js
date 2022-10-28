@@ -46,6 +46,7 @@ const Tabla = ({ cursos }) => {
                 bordered
               />
             }>
+                <h2 style={{textAlign: "center"}}>Proximamente...</h2>
                 <div className={styles.filter_container}>
                     <Checkbox onFocus={filtrar()} color='warning' labelColor='warning'>Filtrar por Nombre Completo</Checkbox>
                     <Checkbox color='warning' labelColor='warning'>Filtrar por Año</Checkbox>
