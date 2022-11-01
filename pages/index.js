@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import herosection from '../components/herosection'
 import Slideshow from '../components/Slideshow'
+import Homepage from '../components/Homepage'
 import NavbarX from '../components/NavbarX'
 
 
@@ -19,7 +20,7 @@ const Home = () => {
       {/* <NavbarX /> */}
 
       <Slideshow/>
-      <Home/>
+      <Homepage/>
       
 
     </div>

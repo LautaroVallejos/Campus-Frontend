@@ -12,13 +12,8 @@ section{
     align-items: center;
     justify-content: center;
 }
-.container{
-    width: 100%;
-    max-width: 80rem;
-    margin:0 auto;
-    padding: 0 1.5rem;
-}
-.accordation-item{
+
+.accordationItem{
     background-color: #283042;
     border-radius: .4rem;
     margin-bottom: 1rem;
@@ -26,7 +21,7 @@ section{
     box-shadow: .5rem 2px .5rem rgba(0, 0, 0, .1);
 }
 
-.accordation-link{
+.accordationLink{
     font-size: 1.6rem;
     color: rgba(255, 255, 255, .8);
     text-decoration: none;
@@ -37,11 +32,11 @@ section{
     justify-content: space-between;
     padding: 1rem 0;
 }
-.accordation-link image{
+.accordationLink image{
     color: #e7d5ff;
     padding: .5rem;
 }
-.accordation-link .img-min{
+.accordationLink .imgMin{
     color: #e7d5ff;
     padding: .5rem;
 }
@@ -69,13 +64,13 @@ section{
     font-size: 1.4rem;
     padding: 2rem;
 }
-.accordation-item:target .answer{
+.accordationItem:target .answer{
     max-height: 20rem;
 }
-.accordation-item:target .accordation-link .img-add{
+.accordationItem:target .accordationLink .imgAdd{
     display: none;
 }
-.accordation-item:target .accordation-link .img-min{
+.accordationItem:target .accordationLink .imgMin{
     display: block;
 }
 
