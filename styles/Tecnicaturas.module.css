@@ -1,0 +1,41 @@
+
+.contAll{
+    border: 1px solid red;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 98%;
+
+}
+.Image{
+    margin-left: 300px;
+}
+
+.prog{
+    border: 1px solid green;
+    /* height: 100px; */
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+}
+.textProg{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    
+}
+
+.ado{
+    border: 1px solid white;
+    /* height: 100px; */
+    margin-bottom: 30px;
+}
+
+.ipp{
+    border: 1px solid salmon;
+    /* height: 100px; */
+    margin-bottom: 30px;
+}
