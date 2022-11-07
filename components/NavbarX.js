@@ -1,7 +1,5 @@
-import { Navbar, Button, Link, Text } from "@nextui-org/react";
+import { Navbar, Link, Text } from "@nextui-org/react";
 import Image from "next/image";
-import Logo from './logoJH'
-import styles from "../styles/NavbarX.module.css"
 
 const NavbarX = () => {
     const collapseItems = [

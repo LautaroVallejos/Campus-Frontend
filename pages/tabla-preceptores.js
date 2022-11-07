@@ -83,7 +83,7 @@ const Tabla = ({ preceptores }) => {
                             const cursos = preceptor.attributes.cursos.data
                             const listaCursos = cursos.map(curso => {
                                 return (
-                                    <li>{curso.attributes.nombreCurso}</li>
+                                    <li key={curso.id}>{curso.attributes.nombreCurso}</li>
                                 )
                             })
 
