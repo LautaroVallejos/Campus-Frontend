@@ -1,7 +1,46 @@
 .container{
+	margin: auto;
+	width: 100%;
+    font-family: "Open Sans", Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+.collapsible {
+    background-color: #16213E;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
     width: 100%;
-    max-width: 80rem;
-    margin:0 auto;
-    padding: 0 1.5rem;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 2vw;
+    letter-spacing: 1px;
+    margin: 10px;
 }
 
+.active, .collapsible:hover {
+    background-color: rgb(1, 28, 100);
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #d9d9d9;
+}
+
+.title {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  
+  .text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 5vw;
+    color: lightblue;
+     -webkit-animation: changeColor 80s ease-in infinite;
+     animation: changeColor 1s ease-in infinite;
+  }
+  .em {font-family: -webkit-pictograph; font-weight: lighter;}
+  
