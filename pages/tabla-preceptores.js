@@ -55,7 +55,7 @@ const Tabla = ({ preceptores }) => {
                 
                 <div className={styles.input_container}>
                     <center>
-                        <Input placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
+                        <Input underlined placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
                         <Button size='lg' status="waring" css={{marginTop: ".6em"}}>Filtrar</Button>
                     </center>
                 </div>
