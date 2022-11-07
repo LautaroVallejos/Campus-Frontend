@@ -37,6 +37,7 @@ const Navbar = () => {
                     src={"/img/alumIcon.png"}
                     width={40}
                     height={40}
+                    alt="Icono Alumno"
                     />
                     <h4 className="option">Datos del estudiante</h4>
                   </li>
@@ -52,6 +53,7 @@ const Navbar = () => {
                     src={"/img/tablaIco.png"}
                     width={40}
                     height={40}
+                    alt="Icono Tablas"
                     />
                     
                     <h4 className="option">Tabla</h4>
@@ -67,6 +69,7 @@ const Navbar = () => {
                     src={"/img/preceIcon.png"}
                     width={40}
                     height={40}
+                    alt="Icono Preceptores"
                     />
                     <h4 className="option">Preceptores</h4>
                   </li>
@@ -81,6 +84,7 @@ const Navbar = () => {
                     src={"/img/inicioIcon.png"}
                     width={40}
                     height={40}
+                    alt="Iconos de Inicion"
                     />
                     <h4 className="option">inicio de sesion</h4>
                   </li>
@@ -101,6 +105,7 @@ const Navbar = () => {
               src="/img/menuIcon.png"
               width={40}
               height={40}
+              alt="test"
               />Menu</label>
           </div>
           <input type="checkbox" id="btn-menu"/>
@@ -128,6 +133,7 @@ const Navbar = () => {
                     className="ico"
                     src={"/img/alumIcon.png"}
                     width={40}
+                    alt="test"
                     height={40}
                     />
                     <h4 className="option">Datos del estudiante</h4>
@@ -144,6 +150,7 @@ const Navbar = () => {
                     src={"/img/tablaIco.png"}
                     width={40}
                     height={40}
+                    alt="test"
                     />
                     <h4 className="option">Tabla</h4>
                   </li>
@@ -157,6 +164,7 @@ const Navbar = () => {
                     className="ico"
                     src={"/img/preceIcon.png"}
                     width={40}
+                    alt="test"
                     height={40}
                     />
                     <h4 className="option">Preceptores</h4>
@@ -171,6 +179,7 @@ const Navbar = () => {
                     className="ico"
                     src={"/img/inicioIcon.png"}
                     width={40}
+                    alt="test"
                     height={40}
                     />
                     <h4 className="option">inicio de sesion</h4>

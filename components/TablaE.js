@@ -84,7 +84,7 @@ const Tabla = ({ estudiantes }) => {
   );
 }
 
-export async function getServerSideProps(){
+export async function getInitialProps(){
     const res = await fetch(`http://localhost:1337/api/estudiantes?populate=*`);
     const estudiantes = await res.json()
     console.log(estudiantes)
