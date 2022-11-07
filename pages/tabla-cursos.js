@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 let url = 'http://localhost:1337/api/cursos?populate=*'
 
 // Función que realíza la petición y trae los datos del backend
-export async function getServerSideProps(context){
+export async function getInitialProps(context){
     const res = await fetch(url);
     const cursos = await res.json()
 
