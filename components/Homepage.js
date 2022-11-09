@@ -6,13 +6,21 @@ import { Collapse, Text } from "@nextui-org/react";
 const Homepage = () => {
     return (
         <>
+        
             <div className={styles.title}>
                 <p className={styles.text}>PARA QUE NOS <em className={styles.em}>Conozcan...</em></p>
             </div>
 
             <div className={styles.container}>
-                <Collapse.Group>
-                    <Collapse title="Quienes comos?">
+                <Collapse.Group
+                  css={{
+                    color: "#FFF7E9",
+                    textAlign:"center"
+
+                }}>
+
+                    <Collapse className={styles.ave} title="Quienes comos?">
+                    {/* <span className={styles.ave}>Quienes comos?</span> */}
                         <Text>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -40,6 +48,7 @@ const Homepage = () => {
             </div>
             
             <br></br>
+            
         </>
 
     )

@@ -17,6 +17,28 @@
     cursor: pointer;
     margin: 10px;
 }
+.todo h3{
+    color: blue;
+}
+.ave{
+    color: red;
+}
+
+.ave h3{
+    
+    
+    color: #cee4fe;
+    font-size: 2vw;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 18px;
+    width: 100%;
+    /* background-color: #16213E; */
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    
+}
 .nextui-c-PJLV-ijnlmIz-css {
     overflow: hidden;
     padding: 0px 18px;
