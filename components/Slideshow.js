@@ -9,10 +9,10 @@ import "react-slideshow-image/dist/styles.css";
 const Slideshow = () => {
 	//Array of Images
 	const images = [
-		"img/slider1.gif",
-		"img/slider2.gif",
-		"img/slider3.gif",
-		"img/slider4.gif"
+		"/img/slider1.gif",
+		"/img/slider2.gif",
+		"/img/slider3.gif",
+		"/img/slider4.gif"
 	];
 
 	//These are custom properties for zoom effect while slide-show
@@ -39,7 +39,7 @@ const Slideshow = () => {
 								width={2000}
 								height={600}
 								src={each}
-								alt="images-slider"
+								// alt="images-slider"
 							/>
 							</div>
 						</div>
