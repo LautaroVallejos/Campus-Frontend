@@ -9,18 +9,16 @@ import { useRouter } from 'next/router';
 let url = 'http://localhost:1337/api/cursos?populate=*'
 
 // Función que realíza la petición y trae los datos del backend
-export async function getInitialProps(context){
+export async function getServerSideProps(){
     const res = await fetch(url);
     const cursos = await res.json()
 
-    
     return {
         props: {
             cursos: cursos,
         }
     }
 };
-
 
 // funcion en trabajo
 const filtrar = async (event) => {
@@ -53,28 +51,36 @@ const filtrar = async (event) => {
 
 // Funcion que funca
 export async function eventHandler(event) {
-    let input = event.target.input.value;
-    let filter = event.target.filterField.value;
+    try {
+        let input = event.target.input.value; //Obtiene el valor del input 
+        let filter = event.target.filterField.value; //Obtiene el tipo de filtrado
 
-    const res = await fetch(`http://localhost:1337/api/cursos?filters[${filter}][$contains]=${input}`)
-    const newCursos = res.json();
-    
-    event.preventDefault();
-    
-    alert(`Input ingresado: ${input} \nFiltrar por: ${filter}`);
-    
-    return {
-        props: {
-            newCursos: newCursos,
+        const res = await fetch(`http://localhost:1337/api/cursos?populate=*&filters[${filter}][$contains]=${input}`)
+        const cursos = await res.json();
+        
+        // event.preventDefault();
+        
+        alert(`Input ingresado: ${input} \nFiltrar por: ${filter}`);
+        
+        return {
+            props: {
+                cursos: cursos
+            }
         }
+    } catch (error) {
+        console.log(error)
     }
 }
 
 // Vista/Página de la Tabla
-const Tabla = ({ cursos, newCursos }) => {
+const Tabla = ({ cursos }) => {
 
     
+    const [newCursos, setNewCursos] = useState([cursos.data.attributes])
     
+    useEffect((cursos) =>  {
+        cursos?.map((curso) => curso) 
+    })
     
     // Columnas
     const columns = [
@@ -99,7 +105,7 @@ const Tabla = ({ cursos, newCursos }) => {
         };
     }
     
-    const list = useAsyncList({ cursos, newCursos}); // Componente de lista asincrono
+    const list = useAsyncList({ cursos }); // Componente de lista asincrono
 
     // Tabla de Cursos
     return (
@@ -115,7 +121,7 @@ const Tabla = ({ cursos, newCursos }) => {
               />
             }>
                 <h2 style={{textAlign: "center"}}>Filtrar por..</h2>
-                    <form method='post' onSubmit={eventHandler}>
+                    <form method='post' >
                         <div className={styles.filter_container}>
                             <Radio.Group name='filterField' orientation="horizontal" defaultValue="nombre">
                                 <Radio labelColor='warning' value="nombreCurso" color='warning'>Nombre del Curso</Radio>
@@ -127,7 +133,7 @@ const Tabla = ({ cursos, newCursos }) => {
                         
                         <div className={styles.input_container}>
                                     <Input name='input' type="text" underlined placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
-                                    <Button type='submit' className='submit' size='lg' status="waring" css={{marginTop: ".6em"}}>Filtrar</Button>
+                                    <Button onClick={() => setNewCursos({eventHandler})} type='submit' className='submit' size='lg' status="waring" css={{marginTop: ".6em"}}>Filtrar</Button>
                         </div>
                     </form>
             </Collapse>
