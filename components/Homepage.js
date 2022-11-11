@@ -1,6 +1,6 @@
 import styles from '../styles/Homepage.module.css'
-import Image from "next/image";
 import { Collapse, Text } from "@nextui-org/react";
+import { Image } from '@nextui-org/react';
 import { Card, Grid, Row } from "@nextui-org/react";
 
 
@@ -9,43 +9,27 @@ const Homepage = () => {
     const list = [
         {
             title: "Java script",
-            img: "https://soyhorizonte.com/wp-content/uploads/2020/10/Javascript-by-SoyHorizonte.jpg",
+            img: "/img/javascript.jpg",
         },
         {
             title: "Next Js",
-            img: "/images/fruit-2.jpeg",
+            img: "/img/next.jpeg",
         },
         {
             title: "Node Js",
-            img: "/images/fruit-3.jpeg",
+            img: "/img/nodejs.jpg",
 
         },
         {
-            title: "Lemon",
-            img: "/images/fruit-4.jpeg",
-        },
-        {
-            title: "Avocado",
-            img: "/images/fruit-5.jpeg",
-
-        },
-        {
-            title: "Lemon 2",
-            img: "/images/fruit-6.jpeg",
-        },
-        {
-            title: "Banana",
-            img: "/images/fruit-7.jpeg",
-        },
-        {
-            title: "Watermelon",
-            img: "/images/fruit-8.jpeg",
-
-        },
+            title: "Strapi",
+            img: "/img/strapi.jpg",
+        }
+ 
     ];
 
     return (
         <>
+            <hr className={styles.hr}></hr>
             <div className={styles.container2}>
                 <h4 className={styles.hover1}>Mas informacion...</h4>
             </div>
@@ -57,7 +41,7 @@ const Homepage = () => {
 
                     }}>
 
-                    <Collapse className={styles.titulo} title="Quienes comos?">
+                    <Collapse className={styles.titulo} title="Quienes somos?">
                         {/* <span className={styles.ave}>Quienes comos?</span> */}
                         <Text css={{
                             backgroundColor: "rgb(217, 217, 217)",
@@ -65,7 +49,7 @@ const Homepage = () => {
                             overflow: "hidden",
                             padding: "0px 18px",
                             textTransform: "none",
-                            fontSize: "1vw",
+                            fontSize: "1em",
 
                         }}>
 
@@ -75,14 +59,14 @@ const Homepage = () => {
                                 aliquip ex ea commodo consequat.</strong>
                         </Text>
                     </Collapse>
-                    <Collapse className={styles.titulo} title="Que tecnologias usamos?" expanded>
+                    <Collapse className={styles.titulo} title="Como nacio la idea de realizar el campus?" expanded>
                         <Text css={{
                             backgroundColor: "rgb(217, 217, 217)",
                             textAlign: "center",
                             overflow: "hidden",
                             padding: "0px 18px",
                             textTransform: "none",
-                            fontSize: "1vw"
+                            fontSize: "1em"
                         }}>
                             <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -90,7 +74,7 @@ const Homepage = () => {
                                 aliquip ex ea commodo consequat.</strong>
                         </Text>
                     </Collapse>
-                    <Collapse className={styles.titulo} title="Que funcionalidad tiene este campus">
+                    <Collapse className={styles.titulo} title="Que funcionalidad tiene este campus?">
                         <Text css={{
                             backgroundColor: "rgb(217, 217, 217)",
                             textAlign: "center",
@@ -98,7 +82,7 @@ const Homepage = () => {
                             padding: "0px 18px",
                             textTransform: "none",
                             width: "100%",
-                            fontSize: "1vw"
+                            fontSize: "1em"
                         }}>
                             <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -113,8 +97,9 @@ const Homepage = () => {
             {/*<div className={styles.title}>
                 <p className={styles.text}>Lenguajes que utilizamos</p>
             </div>*/}
+            <hr className={styles.hr}></hr>
              <div className={styles.container2}>
-                <h4 className={styles.hover2}>Lenguajes usados...</h4>
+                <h4 className={styles.hover2}>Tecnologias utilizadas...</h4>
             </div>
             <br></br>
             <Grid.Container gap={2} justify="flex-start">
@@ -123,7 +108,7 @@ const Homepage = () => {
                         <Card isPressable>
                             <Card.Body css={{ p: 0 }}>
                                 <Card.Image
-                                    src={"https://nextui.org" + item.img}
+                                    src={item.img}
                                     objectFit="cover"
                                     width="100%"
                                     height={140}
