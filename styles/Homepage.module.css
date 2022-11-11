@@ -1,69 +1,100 @@
 /*Dropdown*/
-.container{
-	margin: auto;
-	width: 100%;
+.container {
+    margin: auto;
+    width: 100%;
     font-family: "Open Sans", Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
-.nextui-c-hPzDAx .nextui-collapse-title {
+.titulo h3 {
     color: #cee4fe;
     font-size: 2vw;
     text-align: center;
     letter-spacing: 1px;
-    padding: 18px;
     width: 100%;
     /* background-color: #16213E; */
     border: none;
     cursor: pointer;
-    margin: 10px;
-}
-.todo h3{
-    color: blue;
-}
-.ave{
-    color: red;
 }
 
-.ave h3{
-    
-    
-    color: #cee4fe;
-    font-size: 2vw;
-    text-align: center;
-    letter-spacing: 1px;
-    padding: 18px;
-    width: 100%;
-    /* background-color: #16213E; */
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    
-}
-.nextui-c-PJLV-ijnlmIz-css {
-    overflow: hidden;
-    padding: 0px 18px;
-    background-color: rgb(217, 217, 217);
-    color: rgb(31, 31, 31);
-    text-transform: none;
+.titulo h3:hover {
+    background-color: rgb(33, 58, 128);
 }
 
-.active, .collapsible:hover {
-    background-color: rgb(1, 28, 100);
-}
 .title {
     width: 100%;
     margin: 0 auto;
     padding: 10px;
-  }
-  
-  .text {
-     margin-top: 190px;
+}
+
+.text {
+    margin-top: 6px;
     font-weight: bold;
     text-align: center;
     font-size: 5vw;
-    color: lightblue;
-     -webkit-animation: changeColor 80s ease-in infinite;
-     animation: changeColor 1s ease-in infinite;
+    color: #5D568C;
+
+    
+}
+/*.text:hover{
+    
+    text-shadow: 0px 20px 7px rgb(89, 0, 255);
+}
+.em {
+    font-family: -webkit-pictograph;
+    font-weight: lighter;
+}*/
+
+
+.hover1 {
+    line-height: 1.2em;
+    color: #0000;
+    text-shadow: 
+    0 0 #5D568C, 
+    0 1.2em #1095c1;
+    overflow: hidden;
+    transition: .3s;
+    font-size: 5vw;
+    margin-top: 100px;
   }
-  .em {font-family: -webkit-pictograph; font-weight: lighter;}
+  .hover1:hover {
+    text-shadow: 
+      0 -1.2em #000, 
+      0 0 #1095c1;
+  }
   
+  .container2 {
+    margin: 0;
+    display: grid;
+    place-content: center;
+  }
+ .hover1 h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 .1em;
+    margin-top: 6px;
+  }
+
+  .hover2 {
+    line-height: 1.2em;
+    color: #0000;
+    text-shadow: 
+    0 0 #5D568C, 
+    0 1.2em #1095c1;
+    overflow: hidden;
+    transition: .3s;
+    font-size: 5vw;
+    margin-top: 100px;
+  }
+  .hover2:hover {
+    text-shadow: 
+      0 -1.4em #000, 
+      0 0 #1095c1;
+  }
+  .hover2 h4 {
+    font-family: system-ui, sans-serif;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 0 .1em;
+    margin-top: 6px;
+  }
