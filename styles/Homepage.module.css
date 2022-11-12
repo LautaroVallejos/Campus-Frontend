@@ -27,7 +27,8 @@
 
 
 .titulo h3:hover {
-    background-color: rgb(33, 58, 128);
+    background-color: #5D568C;
+    transition: .6s;
 }
 
 .title {
@@ -69,7 +70,7 @@
   .hover1:hover {
     text-shadow: 
       0 -1.2em #000, 
-      0 0 #1095c1;
+      0 0 #c1102e;
   }
   @media only screen and (max-width: 1000px) {
   
@@ -96,18 +97,19 @@
     line-height: 1.2em;
     color: #0000;
     text-shadow: 
-    0 0 #5D568C, 
-    0 1.2em #c1102e;
+    0 0  #c1102e, 
+    0 1.2em #5D568C;
     overflow: hidden;
     transition: .3s;
     font-size: 5vw;
     margin-top: 100px;
   }
-
+ 
+  
   .hover2:hover {
     text-shadow: 
       0 -1.4em #000, 
-      0 0 #c1102e;
+      0 0 #5D568C;
   }
   .hover2 h4 {
     font-family: system-ui, sans-serif;

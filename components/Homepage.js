@@ -41,7 +41,7 @@ const Homepage = () => {
 
                     }}>
 
-                    <Collapse className={styles.titulo} title="Quienes somos?">
+                    <Collapse className={styles.titulo} title="¿Que objetivo tiene el campus?">
                         {/* <span className={styles.ave}>Quienes comos?</span> */}
                         <Text css={{
                             backgroundColor: "rgb(217, 217, 217)",
@@ -49,32 +49,33 @@ const Homepage = () => {
                             overflow: "hidden",
                             padding: "0px 18px",
                             textTransform: "none",
-                            fontSize: "1em",
+                            fontSize: "1.3em",
+                            paddingTop:"30px",
+                            paddingBottom:"30px",
 
                         }}>
 
-                            <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.</strong>
+                            <strong> El objetivo del campus es funcionar como una herramienta academica mas para los alumnos y personal de la escuela, 
+                                    facilitando ciertos procesos como obtencion de la informacion de los alumnos en momentos criticos o mismo para facilitar las labores administrativas.
+                                    En resumen el objetivo es que el campus funcione como una herramienta adyacente que ayude a los alummnos, personal docente y administrativo a tener un mejor y mas sencillo desarrollo de sus labores</strong>
                         </Text>
                     </Collapse>
-                    <Collapse className={styles.titulo} title="Como nacio la idea de realizar el campus?" expanded>
+                    
+                    <Collapse className={styles.titulo} title="¿Que se espera del campus a futuro?"expanded>
                         <Text css={{
                             backgroundColor: "rgb(217, 217, 217)",
                             textAlign: "center",
                             overflow: "hidden",
                             padding: "0px 18px",
                             textTransform: "none",
-                            fontSize: "1em"
+                            fontSize: "1.3em",
+                            paddingTop:"30px",
+                            paddingBottom:"30px"
                         }}>
-                            <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.</strong>
+                            <strong>Del campus esperamos que en un futuro se pueda seguir elaborando funcionalidades por los alumnos de las siguientes generaciones, que sea algo que les sirva para poder aprender distintas tecnologias, para saber como trabajar en equipo y poder seguir elaborandola mas para que en un futuro sea un sistema que realmente se pueda usar en el colegio.</strong>
                         </Text>
                     </Collapse>
-                    <Collapse className={styles.titulo} title="Que funcionalidad tiene este campus?">
+                    <Collapse className={styles.titulo} title="¿Como nos nacio la idea de hacer el campus?">
                         <Text css={{
                             backgroundColor: "rgb(217, 217, 217)",
                             textAlign: "center",
@@ -82,12 +83,11 @@ const Homepage = () => {
                             padding: "0px 18px",
                             textTransform: "none",
                             width: "100%",
-                            fontSize: "1em"
+                            fontSize: "1.3em",
+                            paddingTop:"30px",
+                            paddingBottom:"30px"
                         }}>
-                            <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat.</strong>
+                            <strong>La idea del campus surgio al saber que teniamos que realizar un proyecto. Nos pusimos a pensar que es lo que podiamos hacer, algo que no este hecho ya en nuestra escuela y algo que tenga una funcionalidad a futuro. Entonces nos surgio la idea de hacer un campus virtual, ya que en los 7 años que llevamos en el colegio sentiamos la falta de un sistema hecho por los alumnos para el colegio, para que todo sea mas organizado y simple para el personal docente, administrativo y para los alumnos.</strong>
                         </Text>
                     </Collapse>
                 </Collapse.Group>
