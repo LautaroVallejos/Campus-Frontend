@@ -96,7 +96,7 @@ const NavbarX = () => {
                             fontSize: "2em",
                             marginBottom: ".7em"
                         }}
-                        href="/tabla-profesores"
+                        href="/tecnicaturas"
                     >
                         Tecnicaturas
                     </Link>
