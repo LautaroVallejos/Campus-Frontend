@@ -1,13 +1,80 @@
 // Recursos
 import '../public/icons/filter.png'
-import { Table, useAsyncList, Collapse, Avatar, Checkbox, Input, Button } from "@nextui-org/react";
-import styles from "../styles/tabla.module.css"
+import React, { useState, useEffect} from 'react';
+import { Table, useAsyncList, Collapse, Avatar, Radio, Input, Button } from "@nextui-org/react";
+import styles from "../styles/tabla.module.css";
+import { useRouter } from 'next/router';
 
 // Se realiza la peticion al backend
 let url = 'http://localhost:1337/api/cursos?populate=*'
 
+// Función que realíza la petición y trae los datos del backend
+export async function getInitialProps(context){
+    const res = await fetch(url);
+    const cursos = await res.json()
+
+    
+    return {
+        props: {
+            cursos: cursos,
+        }
+    }
+};
+
+
+// funcion en trabajo
+const filtrar = async (event) => {
+    try {
+        event.preventDefault();
+        console.log(clases)
+
+        // Toma los valores de entrada
+        let input = event.target.input.value;
+        let filter = event.target.filterField.value;
+        
+        // Realiza la peticion al backend 
+        const res = await fetch(`http://localhost:1337/api/cursos?filters[${filter}][$contains]=${input}`)
+        const cursos = await res.json()
+        
+        setClases(cursos)
+
+        return{
+            props: {
+                cursos: cursos,
+            }
+        }
+        
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+// useEffect(() => filtrar, [])
+
+// Funcion que funca
+export async function eventHandler(event) {
+    let input = event.target.input.value;
+    let filter = event.target.filterField.value;
+
+    const res = await fetch(`http://localhost:1337/api/cursos?filters[${filter}][$contains]=${input}`)
+    const newCursos = res.json();
+    
+    event.preventDefault();
+    
+    alert(`Input ingresado: ${input} \nFiltrar por: ${filter}`);
+    
+    return {
+        props: {
+            newCursos: newCursos,
+        }
+    }
+}
+
 // Vista/Página de la Tabla
-const Tabla = ({ cursos }) => {
+const Tabla = ({ cursos, newCursos }) => {
+
+    
+    
     
     // Columnas
     const columns = [
@@ -16,7 +83,7 @@ const Tabla = ({ cursos }) => {
         { name: "Especialidad", uid: "especialidad" },
         { name: "Preceptor", uid:"preceptor"},
     ];
-
+    
     //Funcion de Carga
     async function load({ signal, cursor }) {
         // If no cursor is available, then we're loading the first page.
@@ -24,19 +91,20 @@ const Tabla = ({ cursos }) => {
         const res = await fetch(
             cursor || url,
             { signal }
-        );
-        const json = await res.json();
-        return {
-            items: json.results,
-            cursor: json.next,
+            );
+            const json = await res.json();
+            return {
+                items: json.results,
+                cursor: json.next,
         };
     }
-
-    const list = useAsyncList({ cursos }); // Componente de lista asincrono
+    
+    const list = useAsyncList({ cursos, newCursos}); // Componente de lista asincrono
 
     // Tabla de Cursos
     return (
         <>
+        <h3>{newCursos}</h3>
             <h1 className={styles.title}>Tabla de Cursos</h1>
             <Collapse title="Filtros" style={{color: "white"}} contentLeft={
                 <Avatar
@@ -46,20 +114,22 @@ const Tabla = ({ cursos }) => {
                 bordered
               />
             }>
-                <h2 style={{textAlign: "center"}}>Proximamente...</h2>
-                <div className={styles.filter_container}>
-                    <Checkbox onFocus={filtrar()} color='warning' labelColor='warning'>Filtrar por Nombre Completo</Checkbox>
-                    <Checkbox color='warning' labelColor='warning'>Filtrar por Año</Checkbox>
-                    <Checkbox color='warning' labelColor='warning'>Filtrar por Especialidad</Checkbox>
-                    <Checkbox color='warning' labelColor='warning'>Filtrar por Preceptor</Checkbox>
-                </div>
-                
-                <div className={styles.input_container}>
-                    <center>
-                        <Input placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
-                        <Button size='lg' status="waring" css={{marginTop: ".6em"}}>Filtrar</Button>
-                    </center>
-                </div>
+                <h2 style={{textAlign: "center"}}>Filtrar por..</h2>
+                    <form method='post' onSubmit={eventHandler}>
+                        <div className={styles.filter_container}>
+                            <Radio.Group name='filterField' orientation="horizontal" defaultValue="nombre">
+                                <Radio labelColor='warning' value="nombreCurso" color='warning'>Nombre del Curso</Radio>
+                                <Radio labelColor='warning' value="Ano" color='warning'>Año</Radio>
+                                <Radio labelColor='warning' value="especialidad" color='warning'>Especialidad</Radio>
+                                <Radio labelColor='warning' value="preceptor" color='warning'>Preceptor</Radio>
+                            </Radio.Group>
+                        </div>
+                        
+                        <div className={styles.input_container}>
+                                    <Input name='input' type="text" underlined placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
+                                    <Button type='submit' className='submit' size='lg' status="waring" css={{marginTop: ".6em"}}>Filtrar</Button>
+                        </div>
+                    </form>
             </Collapse>
             <Table
                 shadow={false}
@@ -109,22 +179,6 @@ const Tabla = ({ cursos }) => {
             </Table>
         </>
     );
-}
-
-// Función que realíza la petición y trae los datos del backend
-export async function getServerSideProps(){
-    const res = await fetch(url);
-    const cursos = await res.json()
-
-    return {
-        props: {
-            cursos: cursos,
-        }
-    }
-};
-
-export async function filtrar(options){
-
 }
 
 export default Tabla;
