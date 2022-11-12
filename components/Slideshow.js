@@ -37,7 +37,7 @@ const Slideshow = () => {
 								style={{display: "flex", justifyContent: "center"}}
 								className="w-3/4 object-cover rounded-lg shadow-xl"
 								width={2000}
-								height={600}
+								height={1000}
 								src={each}
 								// alt="images-slider"
 							/>

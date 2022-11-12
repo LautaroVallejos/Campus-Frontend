@@ -72,7 +72,7 @@ const Homepage = () => {
                             paddingTop:"30px",
                             paddingBottom:"30px"
                         }}>
-                            <strong>Del campus esperamos que en un futuro se pueda seguir elaborando funcionalidades por los alumnos de las siguientes generaciones, que sea algo que les sirva para poder aprender distintas tecnologias, para saber como trabajar en equipo y poder seguir elaborandola mas para que en un futuro sea un sistema que realmente se pueda usar en el colegio.</strong>
+                            <strong>Del campus esperamos que en un futuro se puedan seguir elaborando funcionalidades por los alumnos de las siguientes generaciones, que sea algo que les sirva para poder aprender distintas tecnologias, para saber como trabajar en equipo y poder seguir elaborandola mas para que en un futuro sea un sistema que realmente se pueda usar en el colegio.</strong>
                         </Text>
                     </Collapse>
                     <Collapse className={styles.titulo} title="¿Como nos nacio la idea de hacer el campus?">
