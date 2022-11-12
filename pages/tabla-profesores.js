@@ -54,7 +54,7 @@ const Tabla = ({ profesores }) => {
                 
                 <div className={styles.input_container}>
                     <center>
-                        <Input placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
+                        <Input underlined placeholder='Buscar' css={{background: '#202020'}} size='xl' status='error'></Input>
                         <Button size='lg' status="waring" css={{marginTop: ".6em"}}>Filtrar</Button>
                     </center>
                 </div>
@@ -118,7 +118,7 @@ const Tabla = ({ profesores }) => {
 }
 
 // Función que realíza la petición y trae los datos del backend
-export async function getServerSideProps(){
+export async function getInitialProps(){
     const res = await fetch(url);
     const profesores = await res.json()
 

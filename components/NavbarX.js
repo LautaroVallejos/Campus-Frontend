@@ -1,7 +1,5 @@
-import { Navbar, Button, Link, Text } from "@nextui-org/react";
+import { Navbar, Link, Text } from "@nextui-org/react";
 import Image from "next/image";
-import Logo from './logoJH'
-import styles from "../styles/NavbarX.module.css"
 
 const NavbarX = () => {
     const collapseItems = [
@@ -12,15 +10,16 @@ const NavbarX = () => {
     ]
 
     return (
-        <Navbar css={{ backgroundColor: "" }} variant="sticky">
-            <Navbar.Brand children='../public/img/jh-logo.png'>
-                <Navbar.Toggle aria-label="toggle navigation" style={{ marginRight: "5px" }} />
+        <Navbar css={{backgroundColor: "blue"}} variant="sticky">
+            <Navbar.Brand>
+                <Navbar.Toggle aria-label="toggle navigation" style={{marginRight: "5px"}}/>
                 <Link href="/">
                     <Image
                         src="/img/jh-logo.png"
                         width={60}
                         height={60}
-                        style={{ marginLeft: "1px", borderRadius: "50px" }}
+                        alt="logo-jh"
+                        style={{marginLeft: "1px", borderRadius: "50px"}}
                     />
                     <Text b hideIn="xs" style={{ marginLeft: "10px" }}>
                         Campus Virtual JH
