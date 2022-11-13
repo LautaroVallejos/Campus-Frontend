@@ -1,33 +1,42 @@
 
 .contAll{
-    border: 1px solid red;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 98%;
+
     
 }
-.Image{
-    margin-left: 300px;
-}
+
 
 .prog{
-    border: 1px solid green;
+    background-color: rgba(27, 25, 24, 0.541);
+    border: 1px solid black;
+    border-radius: 5px;
     /* height: 100px; */
     width: 80%;
     margin: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: row;
 }
+.imagen{
+margin: auto;
+width: 30%;
+
+}
 .textProg{
+    color: white;
     text-align: center;
     margin: auto;
-    width: 50%;
+    width: 60%;
     
 }
 
+.separador{
+    border: 1px dashed black;
+}
 .ado{
     border: 1px solid white;
     /* height: 100px; */
@@ -39,3 +48,12 @@
     /* height: 100px; */
     margin-bottom: 30px;
 }
+
+@media only screen and (max-width: 1200px) {
+    .imagen{
+        display: none;
+    }
+    .textProg{
+        width: 80%;
+    }
+  }
