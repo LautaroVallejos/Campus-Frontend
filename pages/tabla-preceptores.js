@@ -125,7 +125,7 @@ const Tabla = ({ preceptores }) => {
 }
 
 // Función que realíza la petición y trae los datos del backend
-export async function getInitialProps(){
+export async function getServerSideProps(){
     const res = await fetch(url);
     const preceptores = await res.json()
 

@@ -130,7 +130,7 @@ const Tabla = ({ estudiantes }) => {
 }
 
 // Función que realíza la petición y trae los datos del backend
-export async function getInitialProps(){
+export async function getServerSideProps(){
     const res = await fetch(url);
     const estudiantes = await res.json()
 

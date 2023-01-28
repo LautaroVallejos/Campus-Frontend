@@ -39,7 +39,7 @@ const Slideshow = () => {
 								width={2000}
 								height={600}
 								src={each}
-								// alt="images-slider"
+								alt="images-slider"
 							/>
 							</div>
 						</div>
