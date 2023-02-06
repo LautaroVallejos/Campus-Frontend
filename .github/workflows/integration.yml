@@ -1,17 +1,17 @@
-on: [push]
-jobs:
-  campus-frontend:
-    name: Campus Integration
-    runs-on: ubuntu:latest
-    steps:
-      - uses: actions/checkout@master
-      
-      - name: Installing Dependencies
-      - run: npm install
-      
-      - name: Verifing Syntax Code
-      - run: npm run lint
+on:
+  push:
+    branches:
+      - main
 
+jobs:
+  campus-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: installing dependencies
+        run: npm install
+
+      - name: Searching Syntax Errors
+        run: npm run lint
+      
       - name: Building App
-      - run: npm run build
-        
+        run: npm run build
