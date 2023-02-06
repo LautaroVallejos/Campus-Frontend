@@ -11,7 +11,8 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
-
+          node-version: '16'
+          
   install:
     runs-on: ubuntu-22.04
     timeout-minutes: 1
