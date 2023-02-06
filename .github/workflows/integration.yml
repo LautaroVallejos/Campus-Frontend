@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: installing dependencies
-        run: npm install
+        run: npm ci
 
       - name: Searching Syntax Errors
         run: npm run lint
