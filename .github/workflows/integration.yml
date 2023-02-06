@@ -1,0 +1,17 @@
+on: [push]
+jobs:
+  campus-frontend:
+    name: Campus Integration
+    runs-on: ubuntu:latest
+    steps:
+      - uses: actions/checkout@master
+      
+      - name: Installing Dependencies
+      - run: npm install
+      
+      - name: Verifing Syntax Code
+      - run: npm run lint
+
+      - name: Building App
+      - run: npm run build
+        
