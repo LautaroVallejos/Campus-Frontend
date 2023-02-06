@@ -16,7 +16,7 @@ jobs:
           node-version: "16"
 
       - name: installing dependencies
-        run: npm installing
+        run: npm install
 
       - name: Searching Syntax Errors
         run: npm run lint
