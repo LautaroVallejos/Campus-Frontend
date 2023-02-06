@@ -8,7 +8,7 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: Cancel Previous Redundant Build
-        uses: styfle/cancel-workflow-action
+        uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
 
