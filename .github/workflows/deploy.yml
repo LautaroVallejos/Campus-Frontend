@@ -1,0 +1,8 @@
+on: [push]
+name: action
+jobs:
+  campus-frontend:
+    name: Campus Integration
+    runs:
+      using: 'docker'
+      image: docker://lvallejos/campus-frontend

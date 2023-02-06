@@ -1,0 +1,12 @@
+version: "3"
+services:
+  frontend:
+    container_name: campus-frontend
+    build: .
+    image: campus-frontend:latest
+    restart: unless-stopped
+    volumes:
+      - ./:/usr/src/app
+    ports:
+      - 3000:3000
+    command: npm run start
